@@ -20,7 +20,7 @@ def go(query, path):
     os.makedirs(BASE_PATH)
 
   start = 0 # Google's start query string parameter for pagination.
-  while start < 60: # Google will only return a max of 56 results.
+  while start < 1000: # Google will only return a max of 999 results.
     r = requests.get(BASE_URL % start)
     for image_info in json.loads(r.text)['responseData']['results']:
       url = image_info['unescapedUrl']
